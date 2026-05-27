@@ -5,13 +5,6 @@ spring.jackson.serialization.write-dates-as-timestamps=false
 spring.jackson.deserialization.fail-on-unknown-properties=false
 spring.jackson.time-zone=Europe/Rome
 
-# Da attivare quando si vuole escludere l'autoconfigurazione di Spring Boot per JPA e DataSource, 
-# ad esempio per utilizzare un database in-memory o una configurazione personalizzata
-# spring.autoconfigure.exclude=\
-#   org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration,\
-#   org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,\
-#   org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
-
 # Datasource PostgreSQL
 spring.datasource.url=jdbc:postgresql:nome_del_tuo_database
 spring.datasource.username=username
