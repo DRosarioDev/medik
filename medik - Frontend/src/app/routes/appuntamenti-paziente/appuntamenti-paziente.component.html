@@ -1,0 +1,64 @@
+<div class="shell">
+  <app-sidebar></app-sidebar>
+
+  <!-- Contenuto principale -->
+  <div class="main">
+    <div class="main-header">
+      <p class="main-title">Prenotazione</p>
+    </div>
+
+    <!-- Card -->
+
+    <div class="stat-row" *ngIf="appuntamenti.length > 0">
+      <div class="stat-card">
+        <p class="stat-n">
+          {{ appuntamenti[0].dataInizio | date: "dd/MM/yyyy HH:mm" }}
+        </p>
+        <p class="stat-l">Ultimo appuntamento prenotato</p>
+      </div>
+    </div>
+
+    <!-- Appuntamenti passati -->
+    <div class="table-card" *ngIf="appuntamenti.length > 0">
+      <div class="table-card-header">
+        <div>
+          <p class="table-card-title">Ultimi 5 appuntamenti</p>
+        </div>
+        <span class="badge-count"
+          >{{ appuntamenti.length }} appuntament{{
+            appuntamenti.length === 1 ? "o" : "i "
+          }}
+          total{{ appuntamenti.length === 1 ? "e" : "i " }}</span
+        >
+      </div>
+
+      <div class="empty-state" *ngIf="appuntamenti.length === 0">
+        <i class="material-symbols-outlined">file_off</i>
+        <p>Nessun appuntamento presente</p>
+      </div>
+
+      <table class="table mb-0" *ngIf="appuntamenti.length > 0">
+        <thead>
+          <tr>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let appuntamento of appuntamenti; let i = index"
+            [hidden]="i >= 5 || i === 0"
+          >
+            <td class="td-date">
+              {{ appuntamento.dataInizio | date: "dd/MM/yyyy HH:mm" }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="btn-row">
+      <button class="btn-prenota" *ngIf="!appuntamento" (click)="onPrenotaAppuntamento()">
+        Prenota appuntamento
+      </button>
+    </div>
+  </div>
+</div>

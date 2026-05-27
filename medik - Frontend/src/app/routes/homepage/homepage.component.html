@@ -1,0 +1,168 @@
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="container">
+    <div
+      class="d-flex align-items-center justify-content-between flex-wrap gap-2"
+    >
+      <div class="d-flex gap-4 flex-wrap">
+        <span class="topbar-item">
+          <i class="material-symbols-outlined">schedule</i>
+          Lun–Ven 8:00–13:00 / 15:00–19:00 &nbsp;·&nbsp; Sab 8:00–12:00
+        </span>
+        <span class="topbar-item">
+          <i class="material-symbols-outlined">phone</i>
+          <a href="tel:+39 0000000000">081 555 1234</a>
+        </span>
+      </div>
+      <span class="topbar-item">
+        <i class="material-symbols-outlined">emergency</i>
+        Guardia Medica: <a href="tel:0000000000">800 123 456</a>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div>
+  <section class="hero">
+    <h1>La vostra salute,</h1>
+    <h1>la nostra priorità</h1>
+    <p>
+      Lo Studio Medik offre assistenza medica di qualità e servizi
+      personalizzati per il vostro benessere convenzionate con SSN.
+    </p>
+    <button class="cta-button" [routerLink]="'/login'">Accedi</button>
+  </section>
+
+  <!-- SERVIZI -->
+  <section class="section-services" id="servizi">
+    <div class="container">
+      <div class="row align-items-end mb-5">
+        <div class="col-lg-6">
+          <p class="section-eyebrow">I nostri servizi</p>
+          <h2 class="section-heading">
+            Un'assistenza completa per ogni esigenza
+          </h2>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="material-symbols-outlined">stethoscope</i>
+            </div>
+            <div class="service-title">Medicina Generale</div>
+            <p class="service-desc">
+              Visite di controllo, diagnosi e cura delle patologie comuni. Il
+              vostro medico di fiducia per ogni necessità quotidiana.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="material-symbols-outlined">receipt_long</i>
+            </div>
+            <div class="service-title">Ricette Mediche</div>
+            <p class="service-desc">
+              Prescrizione di farmaci e impegnative per esami specialistici.
+              Ritiro diretto in studio o tramite il portale online.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="material-symbols-outlined">cardiology</i>
+            </div>
+            <div class="service-title">ECG &amp; Cardiologia</div>
+            <p class="service-desc">
+              Elettrocardiogramma di base e monitoraggio pressorio con
+              strumentazione di ultima generazione.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section class="section-contact" id="contatti">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-6 text-center">
+          <p class="section-eyebrow">Dove siamo</p>
+          <h2 class="section-heading">Venite a trovarci</h2>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="contact-card">
+            <div class="contact-row">
+              <div class="contact-ico">
+                <i class="material-symbols-outlined">location_on</i>
+              </div>
+              <div>
+                <div class="contact-label">Indirizzo</div>
+                <div class="contact-value">
+                  Piazza del Colosseo<br />00184 Roma (RM)
+                </div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-ico">
+                <i class="material-symbols-outlined">schedule</i>
+              </div>
+              <div>
+                <div class="contact-label">Orari di ricevimento</div>
+                <div class="contact-value">
+                  Lun–Ven: 8:00–13:00 / 15:00–19:00<br />Sabato: 8:00–12:00
+                </div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-ico">
+                <i class="material-symbols-outlined">phone</i>
+              </div>
+              <div>
+                <div class="contact-label">Telefono</div>
+                <div class="contact-value">
+                  <a
+                    href="tel:+390815551234"
+                    style="color: var(--blue); text-decoration: none"
+                    >081 555 1234</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-ico">
+                <i class="material-symbols-outlined">mail</i>
+              </div>
+              <div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value">
+                  <a
+                    href="mailto:info@studiomedik.it"
+                    style="color: var(--blue); text-decoration: none"
+                    >info@studiomedik.it</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="map-box">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5940.186271084702!2d12.490698974907794!3d41.89085406461728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61b70b7b2079%3A0x527c695197775609!2sP.za%20del%20Colosseo%2C%2000184%20Roma%20RM!5e0!3m2!1sit!2sit!4v1779186415802!5m2!1sit!2sit"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

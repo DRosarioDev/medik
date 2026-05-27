@@ -1,0 +1,15 @@
+package com.rosariodev.medik.persistence;
+
+import java.util.List;
+
+public interface IDAOGeneric<T> {
+
+    T findById(Long id) throws DAOException;
+
+    List<T> findAll() throws DAOException;
+
+    T makePersistent(T entity) throws DAOException;
+
+    void makeTransient(T entity) throws DAOException;
+
+}

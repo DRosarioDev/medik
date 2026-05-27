@@ -1,0 +1,163 @@
+.page-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+.paziente-card {
+  background: white;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.paziente-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #e6f1fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #185fa5;
+  flex-shrink: 0;
+}
+.paziente-name {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 6px;
+}
+.paziente-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.meta-label {
+  font-size: 11px;
+  color: #6c757d;
+}
+.meta-value {
+  font-size: 13px;
+}
+.cf-badge {
+  font-family: monospace;
+  font-size: 12px;
+  background: #e6f1fb;
+  color: #185fa5;
+  padding: 2px 10px;
+  border-radius: 99px;
+}
+.results-card {
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.results-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.results-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+.btn-aggiungi {
+  height: 32px;
+  padding: 0 16px;
+  background: #185fa5;
+  color: #e6f1fb;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.btn-aggiungi:hover {
+  background: #0c447c;
+}
+.urgenza-alta {
+  background: #fcebeb;
+  color: #a32d2d;
+  font-size: 11px;
+  padding: 2px 10px;
+  border-radius: 99px;
+}
+.urgenza-media {
+  background: #faeeda;
+  color: #854f0b;
+  font-size: 11px;
+  padding: 2px 10px;
+  border-radius: 99px;
+}
+.urgenza-bassa {
+  background: #eaf3de;
+  color: #3b6d11;
+  font-size: 11px;
+  padding: 2px 10px;
+  border-radius: 99px;
+}
+td, th {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .page-wrap {
+    padding: 1rem;
+  }
+
+  .paziente-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .paziente-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .paziente-name {
+    font-size: 16px;
+  }
+
+  .paziente-meta {
+    gap: 10px;
+  }
+
+  .results-card {
+    overflow-x: auto;
+  }
+
+  .results-card table {
+    min-width: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-wrap {
+    padding: 0.75rem;
+  }
+
+  .paziente-card {
+    flex-direction: row;
+    align-items: center;
+  }
+}

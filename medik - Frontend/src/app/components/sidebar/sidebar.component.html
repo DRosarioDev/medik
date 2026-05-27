@@ -1,0 +1,40 @@
+<!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sb-brand">
+      <p class="sb-logo">Studio Medico</p>
+      <p class="sb-sub">Portale pazienti</p>
+    </div>
+
+    <nav class="sb-nav">
+      <a class="sb-item" [routerLink]="['/paziente']" routerLinkActive="active">
+      <i class="material-symbols-outlined">dashboard</i>
+        Dashboard
+      </a>
+      <a class="sb-item" [routerLink]="['/paziente/ricette']" routerLinkActive="active">
+        <i class="material-symbols-outlined">receipt</i>
+        Ricette
+      </a>
+      <a class="sb-item" [routerLink]="['/paziente/appuntamenti']" routerLinkActive="active">
+        <i class="material-symbols-outlined">calendar_today</i>
+        Appuntamenti
+      </a>
+      <a class="sb-item" [routerLink]="['/paziente/profilo']" routerLinkActive="active">
+        <i class="material-symbols-outlined">person</i>
+        Profilo
+      </a>
+    </nav>
+
+    <div class="sb-foot" *ngIf="utente">
+      <div class="sb-user">
+        <div class="sb-av">{{ utente.nome[0] }}{{ utente.cognome[0] }}</div>
+        <div class="sb-user-info">
+          <p class="sb-uname">{{ utente.nome }} {{ utente.cognome }}</p>
+          <p class="sb-uemail">{{ utente.email }}</p>
+        </div>
+      </div>
+      <button class="btn-logout" (click)="onLogout()">
+        <i class="material-symbols-outlined">logout</i>
+        Esci
+      </button>
+    </div>
+  </div>

@@ -1,0 +1,20 @@
+<div class="search-card card">
+  <div class="search-header">
+    <div class="search-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <circle cx="7" cy="7" r="5" stroke="#185FA5" stroke-width="1.5"/>
+        <path d="M11 11l3 3" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <p class="search-title">Ricerca paziente</p>
+      <p class="search-sub">Inserisci il cognome per trovare un paziente</p>
+    </div>
+  </div>
+  <form [formGroup]="formGroup" (submit)="onSubmit()">
+    <div class="search-row">
+      <input class="form-control" formControlName="cognomePaziente" type="text" placeholder="Cognome paziente...">
+      <button class="btn-cerca" type="submit">Ricerca</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,151 @@
+.home-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+.search-card {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+}
+.search-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+.search-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #e6f1fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.search-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+.search-sub {
+  font-size: 12px;
+  color: #6c757d;
+  margin: 0;
+}
+.search-row {
+  display: flex;
+  gap: 10px;
+}
+.search-row .form-control {
+  flex: 1;
+}
+.btn-cerca {
+  height: 38px;
+  padding: 0 20px;
+  background: #185fa5;
+  color: #e6f1fb;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-cerca:hover {
+  background: #0c447c;
+}
+.results-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.results-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.results-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+.badge-count {
+  background: #e6f1fb;
+  color: #185fa5;
+  font-size: 11px;
+  padding: 2px 10px;
+  border-radius: 99px;
+}
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e6f1fb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: #185fa5;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.cf {
+  font-family: monospace;
+  font-size: 12px;
+  color: #6c757d;
+}
+.btn-dettagli {
+  height: 30px;
+  padding: 0 14px;
+  background: transparent;
+  color: #185fa5;
+  border: 1px solid #378add;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.btn-dettagli:hover {
+  background: #e6f1fb;
+}
+th {
+  text-align: center;
+}
+td {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .home-wrap {
+    padding: 1rem;
+  }
+
+  .results-card {
+    overflow-x: auto;
+  }
+
+  .results-card table {
+    min-width: 520px;
+  }
+
+  .cf {
+    display: none;
+  }
+
+  .cf-col {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-wrap {
+    padding: 0.75rem;
+  }
+
+  .search-card {
+    padding: 1rem;
+  }
+}

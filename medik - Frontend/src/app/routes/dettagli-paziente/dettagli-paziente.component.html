@@ -1,0 +1,53 @@
+<div class="page-wrap">
+
+  <div *ngIf="paziente" class="paziente-card">
+    <div class="paziente-avatar">
+      {{ paziente.nome[0] }}{{ paziente.cognome[0] }}
+    </div>
+    <div class="paziente-info">
+      <p class="paziente-name">{{ paziente.nome }} {{ paziente.cognome }}</p>
+      <div class="paziente-meta">
+        <div class="meta-item">
+          <span class="meta-label">Data di nascita</span>
+          <span class="meta-value">{{ paziente.dataNascita | date: 'dd/MM/yyyy' }}</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Codice fiscale</span>
+          <span class="cf-badge">{{ paziente.cf }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="ricette" class="results-card">
+    <div class="results-header">
+      <p class="results-title">Ricette</p>
+      <button class="btn-aggiungi" (click)="openDialog()">
+        Aggiungi ricetta
+      </button>
+    </div>
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Descrizione</th>
+          <th>Urgenza</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ricetta of ricette">
+          <td>{{ ricetta.data | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ ricetta.descrizione }}</td>
+          <td>
+            <span [ngClass]="{
+              'urgenza-alta': ricetta.urgenza === 'ALTA',
+              'urgenza-media': ricetta.urgenza === 'MEDIA',
+              'urgenza-bassa': ricetta.urgenza === 'BASSA'
+            }">{{  ricetta.urgenza.toLowerCase().charAt(0).toUpperCase() + ricetta.urgenza.toLowerCase().slice(1) }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

@@ -1,0 +1,212 @@
+/* ── Shell ── */
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f7fb;
+}
+
+/* ── Main ── */
+.main {
+  flex: 1;
+  padding: 1.75rem 1.5rem;
+  min-width: 0;
+}
+
+/* ── Profile hero ── */
+.profile-hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 1.5rem;
+}
+.profile-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #e6f1fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: #0c447c;
+  flex-shrink: 0;
+}
+.profile-name {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 6px;
+  color: #1a1a1a;
+}
+.profile-cf {
+  font-family: monospace;
+  font-size: 12px;
+  background: #e6f1fb;
+  color: #0c447c;
+  padding: 3px 10px;
+  border-radius: 99px;
+  word-break: break-all;
+}
+
+/* ── Info cards ── */
+.info-card {
+  background: #fff;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.info-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem 1.25rem;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+}
+.info-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #e6f1fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #185fa5;
+  flex-shrink: 0;
+}
+.info-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  color: #1a1a1a;
+}
+.info-rows {
+  padding: 0 1.25rem;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
+  gap: 12px;
+}
+.info-label {
+  font-size: 13px;
+  color: #6c757d;
+  flex-shrink: 0;
+}
+.info-value {
+  font-size: 13px;
+  color: #1a1a1a;
+  text-align: right;
+  word-break: break-word;
+}
+.info-value.cf {
+  font-family: monospace;
+  font-size: 12px;
+  background: #e6f1fb;
+  color: #0c447c;
+  padding: 2px 8px;
+  border-radius: 99px;
+  word-break: break-all;
+}
+
+/* ── Medico ── */
+.medico-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 1rem 1.25rem;
+  flex-wrap: wrap;
+}
+.avatar-medico {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e6f1fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0c447c;
+  flex-shrink: 0;
+}
+.medico-name {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 3px;
+  color: #1a1a1a;
+}
+.medico-email {
+  font-size: 12px;
+  color: #6c757d;
+  margin: 0;
+  word-break: break-word;
+}
+
+.btn-cambio-medico {
+  margin-left: auto;
+  padding: 6px 12px;
+  background: rgba(24, 95, 165, 0.1);
+  color: rgba(24, 95, 165, 0.7);
+  border: 0.5px solid rgba(24, 95, 165, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .shell {
+    flex-direction: column;
+    padding-bottom: 64px;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+
+  .profile-name {
+    font-size: 17px;
+  }
+
+  .medico-wrap {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .btn-cambio-medico {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .info-value.cf {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 0.75rem;
+  }
+
+  .profile-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 17px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .info-value {
+    text-align: left;
+  }
+}

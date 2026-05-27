@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>{{ idCheck ? 'Modifica appuntamento' : 'Nuovo appuntamento' }}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="formGroup">
+    <div class="field">
+      <label>Titolo</label>
+      <input type="text" formControlName="titolo" class="form-control" placeholder="Titolo appuntamento">
+    </div>
+
+    <div class="field" *ngIf="!idCheck">
+      <label>Orario</label>
+      <div *ngIf="loading">Caricamento orari...</div>
+      <select *ngIf="!loading" formControlName="orario" class="form-control">
+        <option value="">Seleziona orario...</option>
+        <option *ngFor="let orario of orari" [value]="orario">{{ orario }}</option>
+      </select>
+    </div>
+  </form>
+<div class="modal-footer">
+  <button class="btn-cancel" mat-dialog-close>Annulla</button>
+
+  <ng-container *ngIf="idCheck">
+    <button class="btn-danger" (click)="onElimina()">Elimina</button>
+    <button class="btn-submit" (click)="onModifica()" [disabled]="formGroup.invalid">Salva modifiche</button>
+  </ng-container>
+
+  <button *ngIf="!idCheck" class="btn-submit" (click)="onSubmit()" [disabled]="formGroup.invalid">Aggiungi appuntamento</button>
+</div>
+</mat-dialog-content>

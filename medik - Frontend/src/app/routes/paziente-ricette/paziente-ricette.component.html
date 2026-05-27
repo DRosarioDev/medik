@@ -1,0 +1,54 @@
+<div class="shell">
+
+  <app-sidebar></app-sidebar>
+
+  <!-- Contenuto principale -->
+  <div class="main">
+
+    <div class="main-header">
+      <p class="main-title">Ricette</p>
+    </div>
+
+
+    <!-- Ricette -->
+    <div class="table-card" *ngIf="ricette">
+      <div class="table-card-header">
+        <div>
+          <p class="table-card-title">Ricette recenti</p>
+        </div>
+        <span class="badge-count">{{ ricette.length }} ricett{{ ricette.length === 1 ? 'a' : 'e' }}</span>
+      </div>
+
+      <div class="empty-state" *ngIf="ricette.length === 0">
+        <i class="material-symbols-outlined">file_off</i>
+        <p>Nessuna ricetta presente</p>
+      </div>
+
+      <table class="table mb-0" *ngIf="ricette.length > 0">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Descrizione</th>
+            <th>Urgenza</th>
+            <th>Medico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ricetta of ricette">
+            <td class="td-date">{{ ricetta.data | date: 'dd/MM/yyyy' }}</td>
+            <td class="td-desc">{{ ricetta.descrizione }}</td>
+            <td>
+              <span [ngClass]="{
+                'urgenza-alta':  ricetta.urgenza === 'ALTA',
+                'urgenza-media': ricetta.urgenza === 'MEDIA',
+                'urgenza-bassa': ricetta.urgenza === 'BASSA'
+              }">{{ ricetta.urgenza | titlecase }}</span>
+            </td>
+            <td class="td-doc">{{ ricetta.cognomeMedico }} {{ ricetta.nomeMedico }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

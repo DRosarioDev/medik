@@ -1,0 +1,21 @@
+<nav *ngIf="utente && !isPaziente && !isHome" class="header-bar">
+  <div class="header-left">
+    <div class="header-logo"></div>
+    <p class="header-title">{{ titolo || 'Studio Medico' }}</p>
+  </div>
+
+  <div class="header-right">
+    <div class="user-chip">
+      <div class="user-avatar">{{ utente.nome[0].toUpperCase() }}</div>
+      <span class="user-email">{{ utente.email }}</span>
+    </div>
+
+    <!-- Link medico -->
+    <ng-container *ngIf="isMedico">
+      <a class="nav-btn" routerLink="/pazienti" routerLinkActive="nav-btn-active">Dashboard</a>
+      <a class="nav-btn" routerLink="/calendario" routerLinkActive="nav-btn-active">Calendario</a>
+    </ng-container>
+
+    <button class="nav-btn nav-btn-logout" (click)="logout()">Logout</button>
+  </div>
+</nav>

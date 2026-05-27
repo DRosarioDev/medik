@@ -1,0 +1,73 @@
+<div class="shell">
+  <app-sidebar></app-sidebar>
+
+  <!-- Contenuto principale -->
+  <div class="main">
+    <div class="main-header">
+      <p class="main-title">Prenotazione</p>
+    </div>
+
+    <!-- Card -->
+
+    <!-- prima card: prossima data disponibile -->
+    <form
+      [formGroup]="formGroup"
+      class="table-row"
+      *ngIf="appuntamento.length > 0"
+    >
+      <div class="stat-card">
+        <p class="stat-n">{{ appuntamento[0] | date: "dd/MM/yyyy" }}</p>
+        <p class="stat-l">Seleziona orario</p>
+        <div class="orari-grid">
+          <button
+            [ngClass]="{
+              'btn-selected-hour':
+                orarioSelezionato === orario && !customDataSelezionata,
+              'btn-not-selected-hour':
+                orarioSelezionato !== orario || customDataSelezionata
+            }"
+            *ngFor="let orario of appuntamento"
+            (click)="onSelect(orario)"
+          >
+            {{ orario | date: "HH:mm" }}
+          </button>
+        </div>
+        <button class="btn-conferma" *ngIf="selected" (click)="onSubmit()">
+          Conferma
+        </button>
+      </div>
+    </form>
+
+    <!-- seconda card: data personalizzata -->
+    <div class="stat-card" style="margin-bottom: 1rem">
+      <p class="stat-l">Oppure seleziona una data specifica</p>
+      <input
+        type="date"
+        class="form-control"
+        [min]="oggi"
+        (change)="onDataChange($event)"
+      />
+      <div class="orari-grid" *ngIf="orariCustomData.length > 0">
+        <button
+          [ngClass]="{
+            'btn-selected-hour':
+              orarioSelezionato === orario && customDataSelezionata,
+            'btn-not-selected-hour':
+              orarioSelezionato !== orario || !customDataSelezionata
+          }"
+          *ngFor="let orario of orariCustomData"
+          (click)="onSelectCustom(orario)"
+        >
+          {{ orario | date: "HH:mm" }}
+        </button>
+      </div>
+      <button
+        class="btn-conferma"
+        *ngIf="customDataSelezionata && orarioSelezionato"
+        (click)="onSubmit()"
+      >
+        Conferma
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Cambio medico</h2>
+<mat-dialog-content>
+  <form [formGroup]="formGroup">
+    <div class="field">
+      <label>Medico</label>
+      <div *ngIf="loading">Caricamento medici...</div>
+      <select *ngIf="!loading" formControlName="medico" class="form-control">
+        <option value="">Seleziona medico...</option>
+        <option *ngFor="let medico of mediciDisponibili" [value]="medico.id">
+          {{ medico.cognome }} {{ medico.nome }}
+        </option>
+      </select>  
+    </div>
+  </form>
+  <div class="modal-footer">
+    <button class="btn-cancel" mat-dialog-close>Annulla</button>
+    <button class="btn-submit" (click)="onSubmit()">Conferma</button>
+  </div>
+</mat-dialog-content>

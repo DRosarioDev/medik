@@ -1,0 +1,80 @@
+::ng-deep .e-schedule {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    border: 0.5px solid rgba(0,0,0,0.1) !important;
+}
+
+::ng-deep .e-schedule .e-schedule-toolbar {
+    background: #185FA5 !important;
+    color: #E6F1FB !important;
+}
+
+::ng-deep .e-schedule .e-toolbar-item .e-tbar-btn {
+    color: #E6F1FB !important;
+}
+
+::ng-deep .e-schedule .e-toolbar-item .e-tbar-btn:hover {
+    background: #0C447C !important;
+}
+
+::ng-deep .e-schedule .e-date-header-wrap .e-header-cells {
+    background: #185FA5 !important;
+    color: #E6F1FB !important;
+}
+
+::ng-deep .e-schedule .e-month-view .e-date-header-wrap table td {
+    background: #185FA5 !important;
+    color: #E6F1FB !important;
+}
+
+::ng-deep .e-schedule .e-work-cells {
+    background: #ffffff !important;
+}
+
+::ng-deep .e-schedule .e-work-cells:hover {
+    background: #E6F1FB !important;
+    cursor: pointer;
+}
+
+::ng-deep .e-schedule .e-month-view .e-work-cells {
+    border-color: rgba(24, 95, 165, 0.15) !important;
+}
+
+::ng-deep .e-schedule .e-current-day {
+    color: #185FA5 !important;
+    font-weight: 600 !important;
+}
+
+::ng-deep .e-schedule .e-current-date .e-date-header {
+    background: #185FA5 !important;
+    color: #E6F1FB !important;
+    border-radius: 50% !important;
+}
+
+::ng-deep .e-schedule .e-appointment {
+    background: #185FA5 !important;
+    border-color: #0C447C !important;
+    border-radius: 6px !important;
+    color: #E6F1FB !important;
+}
+
+::ng-deep .e-schedule .e-appointment:hover {
+    background: #0C447C !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  :host {
+    display: block;
+    padding: 0 0.75rem 1rem;
+  }
+
+  ::ng-deep .e-schedule {
+    border-radius: 8px !important;
+  }
+
+  ::ng-deep .e-schedule .e-toolbar-item .e-tbar-btn {
+    font-size: 12px !important;
+    padding: 0 6px !important;
+  }
+}

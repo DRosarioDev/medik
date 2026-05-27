@@ -1,0 +1,85 @@
+<div class="shell">
+  <app-sidebar></app-sidebar>
+
+  <!-- Main -->
+  <div class="main" *ngIf="paziente">
+    <!-- Avatar + nome -->
+    <div class="profile-hero">
+      <div class="profile-avatar">
+        {{ paziente.nome[0] }}{{ paziente.cognome[0] }}
+      </div>
+      <div>
+        <p class="profile-name">{{ paziente.nome }} {{ paziente.cognome }}</p>
+        <span class="profile-cf">{{ paziente.cf }}</span>
+      </div>
+    </div>
+
+    <!-- Dati anagrafici -->
+    <div class="info-card">
+      <div class="info-card-header">
+        <div class="info-icon">
+          <i class="material-symbols-outlined">id_card</i>
+        </div>
+        <p class="info-card-title">Dati anagrafici</p>
+      </div>
+      <div class="info-rows">
+        <div class="info-row">
+          <span class="info-label">Nome</span>
+          <span class="info-value">{{ paziente.nome }}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Cognome</span>
+          <span class="info-value">{{ paziente.cognome }}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Data di nascita</span>
+          <span class="info-value">{{
+            paziente.dataNascita | date: "dd/MM/yyyy"
+          }}</span>
+        </div>
+        <div class="info-row" style="border-bottom: none">
+          <span class="info-label">Codice fiscale</span>
+          <span class="info-value cf">{{ paziente.cf }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contatti -->
+    <div class="info-card">
+      <div class="info-card-header">
+        <div class="info-icon">
+          <i class="material-symbols-outlined">mail</i>
+        </div>
+        <p class="info-card-title">Contatti</p>
+      </div>
+      <div class="info-rows">
+        <div class="info-row" style="border-bottom: none">
+          <span class="info-label">Email</span>
+          <span class="info-value">{{ paziente.email }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Medico di riferimento -->
+    <div class="info-card" *ngIf="medico">
+      <div class="info-card-header">
+        <div class="info-icon">
+          <i class="material-symbols-outlined">stethoscope</i>
+        </div>
+        <p class="info-card-title">Medico di riferimento</p>
+      </div>
+      <div class="medico-wrap">
+        <div class="avatar-medico">
+          {{ medico.nome[0] }}{{ medico.cognome[0] }}
+        </div>
+        <div>
+          <p class="medico-name">
+            Dott. {{ medico.nome }} {{ medico.cognome }}
+          </p>
+          <p class="medico-email">{{ medico.email }}</p>
+        </div>
+          <button class="btn-cambio-medico" (click)="onCambioMedico()">Cambia medico</button>
+      </div>
+    </div>
+  </div>
+</div>
